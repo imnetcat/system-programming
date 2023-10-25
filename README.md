@@ -3,11 +3,6 @@
 
 **output:**
 ```
--------------------------------------------------------------------
-Standart malloc\free
-performance test: <1 ms
--------------------------------------------------------------------
-Custom malloc\free
 BitMap::BitMap(): nbytes=3, nbits=24
 MemoryManager::MemoryManager():mallloc() mem[384]
 MemoryManager::allocate(): request 8 bytes
@@ -191,5 +186,16 @@ byte[2]=ff 11111111
 -------------------------------------------------------------------
 BitMap::~BitMap(): freeing map[3]
 MemoryManager::~MemoryManager():free() mem[384]
-performance test: 35 ms
+BitMap::BitMap(): nbytes=8193, nbits=65544
+MemoryManager::MemoryManager():mallloc() mem[1048704]
+PerformanceTest::runTest(): time whistle blown
+PerformanceTest::runTest(): race has ended B
+itMap::~BitMap(): freeing map[8193]
+MemoryManager::-MemoryManager():free() mem[1048704]
+-------------------------------------------------------------------
+Standart malloc\free
+performance test: <1 ms
+-------------------------------------------------------------------
+Custom malloc\free
+performance test: 31 ms
 ```
